@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Form Practice</title>
+  <!-- <link type="text/javascript" rel="app.js" /> -->
+  <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+
+<body>
+
+  <h1>Forms!</h1>
+
+  <form action="" id="myTestForm" method="get" name="myForm" >
+    <fieldset>
+      <legend>Personal Info</legend>
+
+      <p>
+        <label for="pName">Name</label>
+        <input type="text" name="personName" id="pName" value="Farts McGee" placeholder="First and Last" autocomplete="name" />
+      </p>
+
+      <p>
+        <label for="pEmail">Email</label>
+        <input type="email" name="personEmail" id="pEmail" placeholder="you@website.com" autocomplete="email" />
+      </p>
+
+      <p>
+        <label for="pTel">Telephone #</label>
+        <input type="tel" name="personTel" id="pTel" placeholder="555-867-5309" autocomplete="tel" />
+      </p>
+
+      <p>
+        <label for="pWebsite">Website</label>
+        <input type="url" name="personWebsite" id="pWebsite" value="" />
+      </p>
+
+      <p>
+        <label>Do you like candy?</label><br />
+        <label for="pLikesCandy">
+          <input type="checkbox" name="personLikesCandy" id="pLikesCandy" value="yepCandy" checked /> I like candy
+        </label>
+      </p>
+
+
+    </fieldset>
+
+    <fieldset>
+      <legend>Preferences</legend>
+
+
+      <p>
+        <label for="prefTime">What time do you like?</label>
+        <input type="time" name="preferredTime" id="prefTime" value="" />
+      </p>
+
+      <p>
+        <label for="prefDate">What day?</label>
+        <input type="date" name="preferredDate" id="prefDate" placeholder="1983-01-30" />
+      </p>
+
+      <p>
+        <label for="prefDateTimeLocal">What day, time and locality?</label>
+        <input type="datetime-local" name="preferredDateTimeLocal" id="prefDateTimeLocal"/>
+      </p>
+
+      <p>
+        <label for="prefMonth">Pick a month</label>
+        <input type="month" name="preferredMonth" id="prefMonth" />
+      </p>
+
+      <p>
+        <label for="prefCake">What kind of cake should I bake?</label>
+        <select name="preferredCake" id="prefCake" >
+          <option value="chocolate" name="cakeChocolate">Chocolate!</option>
+          <option value="sprinkles" name="cakeSprinkles">Sprinkles</option>
+          <option value="none" name="cakeNone">No Cake</option>
+        </select>
+      </p>
+
+      <p>
+        <label for="prefColor">What is your favorite color?</label>
+        <input type="color" name="preferredColor" id="prefColor" value="#e47c78" />
+      </p>
+
+      <p>
+        <label for="prefNumber">Pick a number</label>
+        <input type="number" name="preferredNumber" id="prefNumber" value="50" />
+      </p>
+
+      <p>
+        <label for="prefRange">Ok how about a range, then.</label>
+        <input type="range" name="preferredRange" id="prefRange" min="1" max="100" />
+      </p>
+
+    </fieldset>
+
+    <input type="submit">
+    <input type="reset">
+  </form>
+</body>
+<script src="app.js"></script>
+</html>

@@ -1,0 +1,56 @@
+body {
+  background: #eeeeee;
+  font-family: 'Roboto', sans-serif;
+  padding: .5em 2em;
+}
+
+#myTestForm {
+
+}
+
+  fieldset {
+    margin: 2em;
+    background: #fff;
+    border: 1px solid #aaa;
+    width: 46%;
+    float: left;
+    margin: 0 4% 3em 0;
+  }
+
+    fieldset:nth-child(2) {
+      margin-right: 0;
+    }
+
+    legend {
+      border: 1px solid #aaa;
+      border-radius: 3px;
+      padding: .5em;
+      background: #fafafa;
+      text-transform: uppercase;
+      font-weight: 500;
+      font-size: 18px;
+      color: #555;
+    }
+
+      p {
+        border-bottom: 1px solid #eee;
+      }
+
+      label {
+        width: 12em;
+        margin-right: 2em;
+        display: inline-block;
+        font-weight: 500;
+        font-size: 16px;
+      }
+
+      input,
+      select {
+        font-size: 16px;
+        padding: .25em;
+        margin-bottom: 1em;
+      }
+
+      select {
+        /*font-size: 16px;*/
+      }
