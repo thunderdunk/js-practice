@@ -1,0 +1,12 @@
+body {
+  background: #eeeeee;
+  font-family: 'Roboto', sans-serif;
+  padding: .5em 2em;
+}
+
+.dino-type {
+  background: #fff;
+  border: 1px solid #aaa;
+  margin: 2em 0;
+  padding: 1em 5%;
+}
