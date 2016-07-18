@@ -10,3 +10,7 @@ body {
   margin: 2em 0;
   padding: 1em 5%;
 }
+
+  .dino-type.gray {
+    background: #efefef;
+  }

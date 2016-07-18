@@ -107,6 +107,7 @@ function updateIdStr( value ) {
   strArray[ strArray.length - 1 ] = newId;
     // console.log( strArray );
     return strArray.toString().replace( ',', '-' );
+
 }
 
 function updatePlaceholderStr( value ) {
@@ -153,3 +154,26 @@ secondFieldLabel.textContent = secondFieldLabelText;
 dinoList.appendChild( secondItem );
 
 // secondFieldLabel.appendChild( secondFieldNewText );
+
+// Move Pros List from Triceratops to Stegosaurus
+var triSection = document.querySelector('section'),
+    triContent = triSection.querySelector( '.content' );
+    stegoSection = document.querySelectorAll( 'section' );
+    stegoContent = stegoSection[1].querySelector( '.content' );
+    prosList = triContent.querySelector( '.pros-list' );
+    // console.log( triContent );
+
+
+    // triContent.remove( prosList );
+
+// console.log( prosList );
+
+    oldEl = triContent.removeChild( prosList );
+
+    console.log( stegoContent );
+
+    stegoContent.appendChild( oldEl );
+
+    // Swap the background colors by adding and removing classes
+    stegoSection[1].classList.remove( 'gray' );
+    triSection.classList.add( 'gray' );
