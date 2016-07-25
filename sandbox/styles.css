@@ -8,9 +8,53 @@ body {
   background: #fff;
   border: 1px solid #aaa;
   margin: 2em 0;
-  padding: 1em 5%;
+  /*padding: 1em 5%;*/
 }
 
   .dino-type.gray {
     background: #efefef;
   }
+
+
+.section-header {
+  background: #555;
+  color: #fff;
+  margin: 0;
+  padding: 1em;
+}
+
+  .section-header h2 {
+    margin: 0;
+
+  }
+
+.content {
+  padding: 1em;
+}
+
+/* Closed */
+.dino-type.closed .content {
+  display: none;
+}
+
+/* Open */
+.dino-type.open .section-header {
+  background: teal;
+}
+
+
+/* Capture Bubble stuff */
+.container {
+  background: #fff;
+  border: 1px #ccc solid;
+  padding: 10px;
+  width: 80%;
+  margin: 10px auto;
+  text-align: center;
+}
+
+.container:hover {
+  border-color: #222;
+  cursor: pointer;
+  background: rgba( 0, 0, 0, .2 );
+}
