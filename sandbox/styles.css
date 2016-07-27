@@ -4,6 +4,51 @@ body {
   padding: .5em 2em;
 }
 
+/* Drag and Drop */
+#favorite-dinos {
+  border: 1px solid #ccc;
+  padding: 2em;
+  overflow: hidden;
+  margin-bottom: 4em;
+}
+
+  #favorite-dinos .column {
+    width: 50%;
+    float: left;
+  }
+
+  /* Drag Column */
+  .draggable {
+    display: block;
+    background: #fff;
+    border: 1px solid #ddd;
+    padding: .5em;
+    width: 200px;
+  }
+
+  .draggable.moving {
+    border: 1px solid Crimson;
+  }
+
+  .draggable.copying {
+    border: 1px solid DarkMagenta;
+  }
+
+  /* Drop Column */
+  #favorite-dinos .column.drop-items {
+
+  }
+
+    #drop-area {
+      background: #e1e1e1;
+      padding: 1em 2em 3em;
+    }
+
+    #drop-area.dropping {
+      background: 'DarkSeaGreen';
+    }
+
+/* Accordion */
 .dino-type {
   background: #fff;
   border: 1px solid #aaa;

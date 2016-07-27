@@ -12,6 +12,48 @@
     <p class="intro">Here's what we know about dinosaurs.</p>
   </div>
 
+  <section id="favorite-dinos">
+    <h2>Your Favorite Dinos</h2>
+    <div class="column drag-items">
+      <p class="draggable move">
+        Stegosaurus
+      </p>
+
+      <p class="draggable move">
+        T-Rex
+      </p>
+
+      <p class="draggable copy">
+        Pterodactyl
+      </p>
+
+      <p class="draggable copy">
+        Triceratops
+      </p>
+    </div>
+
+    <div class="column drop-items">
+      <div id="drop-area">
+        <p>
+          Drop dinos here:
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <div id="video">
+    <video controls>
+      <source src="media/demo-video.mp4" type="video/mp4">
+      Sorry, your browser doesn't support embedded videos :(
+    </video>
+    <p>
+      <input id="play" type="submit" value="Play">
+      <input id="pause" type="submit" value="Pause">
+      <input id="restart" type="submit" value="Go to the Beginning">
+      Timestamp: <span id="timestamp">0:00</span>
+    </p>
+  </div>
+
   <section id="triceratops" class="dino-type">
     <header class="section-header">
       <h2>The Mighty Triceratops</h2>
@@ -53,6 +95,30 @@
     </div>
 
   </section>
+
+  <section id="formsection" >
+    <form>
+      <p>
+        <label for="fieldName">Name</label><br />
+        <input type="text" id="fieldName" name="fieldName" placeholder="Your Name" value=""  />
+      </p>
+      <p>
+        <label for="fieldEmail">Email</label><br />
+        <input type="email" id="fieldEmail" name="fieldEmail" placeholder="email@website.com"  />
+      </p>
+      <p>
+        <input type="submit" name="formSubmit" id="formSubmit"/>
+      </p>
+    </form>
+
+  </section>
+
+  <footer>
+    <p>
+      Hi, I'm the Footer.
+    </p>
+
+  </footer>
 
 </body>
 <!-- <script src="app.js"></script> -->
