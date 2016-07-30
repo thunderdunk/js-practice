@@ -1,26 +1,189 @@
 /*
+ * Lightbox
+ */
+
+var thumb = document.querySelectorAll( '.thumb' ),
+    thumbLink = document.querySelectorAll( '.thumb a' ),
+    body = document.getElementsByTagName( 'body' )[0],
+    lightboxContainer,
+    lightboxImg,
+    closeLink,
+    closeText,
+    closeLightbox,
+    clickedImg,
+    navContainer,
+    navNextLink,
+    navNextText,
+    navPrevLink,
+    navPrevText;
+
+// Create lightbox
+
+
+openLightbox = function openLightbox( e ) {
+  e.preventDefault();
+
+  clickedImg = e.target;
+
+  lightboxContainer = document.createElement( 'div' );
+  lightboxImg = e.target.cloneNode( true );
+  console.log( e.target );
+  console.log( lightboxImg );
+
+  // Set up lightbox
+  body.appendChild( lightboxContainer );
+  lightboxContainer.classList.add( 'lightbox-container' );
+  lightboxContainer.style.background = 'rgba(0,0,0,0.8)';
+  lightboxContainer.style.zIndex = '100';
+  lightboxContainer.style.position = 'absolute';
+  lightboxContainer.style.top = '0';
+  lightboxContainer.style.left = '0';
+  lightboxContainer.style.width = '100%';
+  lightboxContainer.style.height = '100%';
+
+  // Add image
+  lightboxContainer.appendChild( lightboxImg );
+  lightboxImg.style.maxWidth = '60%';
+  lightboxImg.style.maxHeight = '60vh';
+  lightboxImg.style.margin = '10vh 20%';
+  // lightboxImg.style.textAlign = 'center';
+
+  // Add Close icon
+  closeText = document.createTextNode( 'X' );
+  closeLink = document.createElement( 'a' );
+
+  closeLink.appendChild( closeText );
+  closeLink.setAttribute( 'href', '#' );
+  lightboxContainer.appendChild( closeLink );
+
+  closeLink.style.position = 'absolute';
+  closeLink.style.top = '20px';
+  closeLink.style.right = '20px';
+  closeLink.style.color = 'aqua';
+  closeLink.style.fontSize = '24px';
+
+  closeLightbox = function closeLightbox( e ) {
+    e.preventDefault();
+    lightboxContainer.remove();
+  }
+
+  closeLink.addEventListener( 'click', closeLightbox, false );
+
+  // Set up navigation
+  navNextLink = document.createElement( 'a' );
+  navNextText = document.createTextNode( 'Next' );
+  navNextLink.appendChild( navNextText );
+
+  navPrevLink = document.createElement( 'a' );
+  navPrevText = document.createTextNode( 'Prev' );
+  navPrevLink.appendChild( navPrevText );
+
+  navContainer = document.createElement( 'div' );
+  navContainer.classList.add( 'navigation' );
+  navContainer.setAttribute( 'role', 'navigation' );
+
+  navContainer.appendChild( navNextLink );
+  navContainer.appendChild( navPrevLink );
+
+  lightboxContainer.appendChild( navContainer );
+
+  navPrevLink.style.color = '#fff';
+  navPrevLink.style.width = '50%';
+  navPrevLink.style.fontSize = '20px';
+  navPrevLink.style.float = 'left';
+  navPrevLink.style.textAlign = 'center';
+
+  navNextLink.style.color = '#fff';
+  navNextLink.style.width = '50%';
+  navNextLink.style.fontSize = '20px';
+  navNextLink.style.float = 'left';
+  navNextLink.style.textAlign = 'center';
+
+  navNext = function navNext( e ) {
+    e.preventDefault();
+    console.log( clickedImg );
+
+    nextImg = clickedImg.nextElementSibling;
+    console.log( nextImg );
+  }
+
+  navNextLink.addEventListener( 'click', navNext, false );
+
+}
+
+for ( i = 0; i < thumb.length; i++ ) {
+  thumb[i].addEventListener( 'click', openLightbox, false );
+
+}
+
+
+
+/*
  * Drag Drop
  */
 
-var dragItems = document.querySelectorAll( '.draggable' ),
-    moveItems = document.querySelectorAll( '.draggable.move' ),
-    copyItems = document.querySelectorAll( '.draggable.copy' ),
-    dropArea = document.getElementById( 'drop-area' );
+// var dragItems = document.querySelectorAll( '.draggable' ),
+//     moveItem = document.querySelector( '.draggable.move' ),
+//     copyItem = document.querySelector( '.draggable.copy' ),
+//     dropArea = document.getElementById( 'drop-area' ),
+//     movable,
+//     copyable;
+//
+// for ( i = 0; i < dragItems.length; i++ ) {
+//   dragItems[i].setAttribute( 'draggable', 'true' );
+// }
+//
+// function dragStartHandler( e ) {
+//
+//   if ( e.target.classList.contains( 'copy' ) ) {
+//     copyable = e.target;
+//     copyable.classList.add( 'active' );
+//
+//     // Set the drag effect to copy
+//     e.dataTransfer.dropEffect = "copy";
+//   }
+//
+//   if ( e.target.classList.contains( 'move' ) ) {
+//     movable = e.target;
+//     movable.classList.add( 'active' );
+//
+//     e.dataTransfer.dropEffect = "move";
+//   }
+//
+//   e.dataTransfer.setData( "text/plain", e.target.classList );
+//   e.preventDefault();
+//   console.log( 'Drag Start' );
+// };
+//
+// function dragEndHandler( e ) {
+//   e.target.classList.remove( 'active' );
+//   dropArea.classList.remove( 'active' );
+//
+//   console.log( 'Drag End' );
+// };
+//
+//
+// function dragoverHandler( e ) {
+//   e.preventDefault();
+//   e.dataTransfer.dropEffect = 'move';
+//   console.log( 'I am over!' );
+// }
+//
+// function dropHandler( e ) {
+//   e.preventDefault();
+//   var data = e.dataTransfer.getData( 'text' );
+//   e.target.appendChild.document.getElementById( data );
+// }
+//
+//
+// moveItem.addEventListener( 'dragstart', dragStartHandler, false );
+// moveItem.addEventListener( 'dragend', dragEndHandler, false );
+// document.addEventListener( 'dragover', dragoverHandler, false );
+// document.addEventListener( 'drop', dropHandler, false );
+// dropArea.addEventListener( 'dragenter', enterDropZone, false );
+// dropArea.addEventListener( 'dragleave', leaveDropZone, false );
 
-for ( i = 0; i < dragItems.length; i++ ) {
-  dragItems[i].setAttribute( 'draggable', 'true' );
-
-
-}
-
-function grabItem( e ) {
-  e.target.classList.add( 'moving' );
-}
-
-moveItems.addEventListener( 'dragstart', grabItem, false );
-
-
-
+// document.addEventListener( 'drop', drop, false );
 /*
  * Media Events
  */

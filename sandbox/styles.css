@@ -4,6 +4,17 @@ body {
   padding: .5em 2em;
 }
 
+/* Gallery */
+#gallery .thumb {
+  width: 200px;
+  display: inline-block;
+}
+
+  .thumb img {
+    width: 100%;
+    height: auto;
+  }
+
 /* Drag and Drop */
 #favorite-dinos {
   border: 1px solid #ccc;
@@ -26,7 +37,7 @@ body {
     width: 200px;
   }
 
-  .draggable.moving {
+  .draggable.active {
     border: 1px solid Crimson;
   }
 
